@@ -1,0 +1,90 @@
+body {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    opacity: 0.5;
+  }
+  
+  a:hover {
+    font-weight: 900;
+    color: black;
+  }
+
+  .units .active {
+      cursor: default;
+      font-weight: 900;
+      opacity: 1;
+  }
+
+  .icon {
+    position: relative;
+    top: -25px;
+    margin-right: 5px;
+    height: 80px;
+    width: 80px;
+  }
+
+  .linkHub {
+      text-align: center;
+      margin-top: 30px;
+  }
+  
+  .typeSky {
+    text-transform: capitalize;
+  }
+  
+  .units {
+    position: relative;
+    top: -45px;
+  }
+  
+  .cityNow {
+    text-align: right;
+  }
+  
+  .container {
+    max-width: 75%;
+  }
+  
+  .weatherWindow {
+    background-color: rgb(191, 212, 218);
+    box-shadow: 0px 0px 10px rgb(194, 194, 194);
+    border: rgb(191, 212, 218);
+    border-radius: 4px;
+  }
+  
+  .temperatureNow,
+  .yourCity {
+    font-size: 80px;
+    margin-bottom: 0px;
+    
+  }
+  
+  .dayTemperature,
+  .dayIndicators,
+  .dayTime,
+  .typeSky {
+    font-size: 15px;
+  }
+  
+  .dayIndicators {
+    text-align: left;
+    padding-top: 30px;
+  }
+  
+  .week {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .card {
+    background-color: rgb(255, 247, 180);
+    border: rgb(255, 247, 180);
+  }

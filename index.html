@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container p-5">
+      <div class="weatherWindow p-5">
+          <form id="enter-city">
+            <div class="row">
+              <div class="col-10">
+                <input
+                  class="form-control"
+                  id="input-city"
+                  type="text"
+                  placeholder="Enter your city"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  class="btn btn-secondary form-control"
+                  value="Search"
+                />
+              </div>
+            </div>
+          </form>
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-7">
+                <p>
+                    <img src="#" alt="icon" class="icon"> <span class="temperatureNow">23</span>
+                    <span class="units">
+                        <a href="#" class="celsius active">ºC</a> |
+                        <a href="#" class="fahrenheit">ºF</a>
+                    </span>
+                </p>
+                <p class="dayTemperature">
+                  Day 27º / Night 17º
+                </p>
+              </div>
+              <div class="col-5 dayIndicators">
+                <p class="precipitation">Precipitation: 2%</p>
+                <p class="humidity">Humidity: 75%</p>
+                <p class="wind">Wind: 3km/h</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 cityNow">
+            <p class="yourCity">Kyiv</p>
+            <p>
+              <span class="day">Tuesday</span>
+              <span class="time">12:39</span>
+            </p>
+            <p class="typeSky">Mostly sunny skies</p>
+          </div>
+        </div>
+        <div class="card p-4">
+          <div class="row week">
+            <div class="col">
+              <p class="nextDay">Wed</p>
+              <p class="emojiNextDay">☀️</p>
+              <p class="tempNextDay">18º / 25º</p>
+            </div>
+            <div class="col">
+              <p class="nextDay2">Thu</p>
+              <p class="emojiNextDay2">🌤</p>
+              <p class="tempNextDay2">16º / 23º</p>
+            </div>
+            <div class="col">
+              <p class="nextDay3">Fri</p>
+              <p class="emojiNextDay3">☀️</p>
+              <p class="tempNextDay3">20º / 27º</p>
+            </div>
+            <div class="col">
+              <p class="nextDay4">Sat</p>
+              <p class="emojiNextDay4">🌤</p>
+              <p class="tempNextDay4">17º / 25º</p>
+            </div>
+            <div class="col">
+              <p class="nextDay5">Sun</p>
+              <p class="emojiNextDay5">☀️</p>
+              <p class="tempNextDay5">19º / 26º</p>
+            </div>
+          </div>
+        </div>
+      </div>
+        <p class="linkHub">
+          <a href="#">My GitHub</a>
+        </p>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
