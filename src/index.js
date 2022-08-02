@@ -36,6 +36,8 @@ function showWeather(response) {
   currentSky.innerHTML = response.data.weather[0].description;
   let currentIcon = document.querySelector(".icon");
   currentIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   // let dayTemp = document.querySelector(".dayTemperature");
   // dayTemp.innerHTML = `Max ${Math.round(
   //   response.data.main.temp_max
