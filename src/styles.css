@@ -5,6 +5,11 @@ body {
   p {
     margin: 0;
   }
+
+  img {
+    height: 90px;
+    width: 90px;
+  }
   
   a {
     color: black;
@@ -23,13 +28,11 @@ body {
     position: relative;
     top: -25px;
     margin-right: 5px;
-    height: 80px;
-    width: 80px;
   }
 
   .linkHub {
-      text-align: center;
-      margin-top: 30px;
+    text-align: center;
+    margin-top: 30px;
   }
   
   .typeSky {
@@ -55,6 +58,10 @@ body {
     border: rgb(191, 212, 218);
     border-radius: 4px;
   }
+
+  .weatherNow {
+    padding: 20px 0 20px 0;
+  }
   
   .temperatureNow {
     font-size: 80px;
@@ -71,6 +78,7 @@ body {
   .dayTime,
   .typeSky {
     font-size: 15px;
+    padding: 0px;
   }
   
   .dayIndicators {
