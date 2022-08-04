@@ -104,3 +104,4 @@ let celsius = document.querySelector(".celsius");
 celsius.addEventListener("click", showCelsius)
 
 showCity("Kharkiv");
+showForecast();
