@@ -60,11 +60,14 @@ body {
     border-radius: 4px;
   }
   
-  .temperatureNow,
-  .yourCity {
+  .temperatureNow {
     font-size: 80px;
     margin-bottom: 0px;
-    
+  }
+
+  .yourCity {
+    font-size: 70px;
+    margin-bottom: 0px;
   }
   
   .dayTemperature,
@@ -81,10 +84,10 @@ body {
   
   .forecast {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
   }
   
   .card {
-    background-color: rgb(255, 247, 180);
-    border: rgb(255, 247, 180);
+    background-color: rgb(154, 172, 177);
+    border: rgb(154, 172, 177);
   }
