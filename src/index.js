@@ -18,6 +18,24 @@ currentDay.innerHTML = toDay;
 let time = currentDate.toLocaleTimeString();
 let currentTime = document.querySelector(".time");
 currentTime.innerHTML = time;
+
+function showForecast() {
+  let forecast = document.querySelector(".forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + 
+    `
+    <div class="col">
+        <p class="nextDay">${day}</p>
+        <p class="emojiNextDay">☀️</p>
+        <p class="tempNextDay">18º / 25º</p>
+    </div>
+    `
+  })
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
 // точные данные о погоде
 function showWeather(response) {
   console.log(response);
