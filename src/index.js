@@ -19,23 +19,53 @@ let time = currentDate.toLocaleTimeString();
 let currentTime = document.querySelector(".time");
 currentTime.innerHTML = time;
 
-function showForecast() {
-  let forecast = document.querySelector(".forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+} 
+
+function showForecast(response) {
+  let forecast = response.data.daily;
+  let currentForecast = document.querySelector(".forecast");
+  
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
     forecastHTML = forecastHTML + 
     `
     <div class="col">
-        <p class="nextDay">${day}</p>
-        <p class="emojiNextDay">☀️</p>
-        <p class="tempNextDay">18º / 25º</p>
+        <p class="nextDay">${formatDay(forecastDay.dt)}</p>
+        <img
+        src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+        alt=""
+        class="emojiNextDay"
+      />
+        <p class="tempNextDay">${Math.round(forecastDay.temp.max)}º / ${Math.round(forecastDay.temp.min)}º</p>
     </div>
     `
-  })
+  }
+  if (index < 1) {
+    let dayTemp = document.querySelector(".dayTemperature");
+    dayTemp.innerHTML = `Day ${Math.round(forecastDay.temp.max)}º / Night ${Math.round(forecastDay.temp.min)}º`;
+    let rain = document.querySelector(".rain");
+    rain.innerHTML = `Rain: ${Math.round((forecastDay.rain) * 10)} %`
+    if (forecastDay.rain === undefined) {
+      rain.innerHTML = `Rain: 0 %`
+    }
+  }
+})
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  currentForecast.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+  let apiKey = "98dc9516d2cb8fe245b1b135cfa17cfe";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+  axios.get(apiUrl).then(showForecast);
+}
+
 // точные данные о погоде
 function showWeather(response) {
   console.log(response);
@@ -56,10 +86,8 @@ function showWeather(response) {
   currentIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   celsius.classList.add("active");
   fahrenheit.classList.remove("active");
-  // let dayTemp = document.querySelector(".dayTemperature");
-  // dayTemp.innerHTML = `Max ${Math.round(
-  //   response.data.main.temp_max
-  // )}º / Min ${Math.round(response.data.main.temp_min)}º`;
+
+  getForecast(response.data.coord)
 }
 // вызов данных о погоде
 function showCity(city) {
@@ -104,4 +132,3 @@ let celsius = document.querySelector(".celsius");
 celsius.addEventListener("click", showCelsius)
 
 showCity("Kharkiv");
-showForecast();
