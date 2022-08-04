@@ -15,12 +15,8 @@ body {
   a:hover {
     font-weight: 900;
     color: black;
-  }
-
-  .units .active {
-      cursor: default;
-      font-weight: 900;
-      opacity: 1;
+    transition: all 200ms ease-in-out;
+    opacity: 1;
   }
 
   .icon {

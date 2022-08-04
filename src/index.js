@@ -50,9 +50,9 @@ function showForecast(response) {
     let dayTemp = document.querySelector(".dayTemperature");
     dayTemp.innerHTML = `Day ${Math.round(forecastDay.temp.max)}º / Night ${Math.round(forecastDay.temp.min)}º`;
     let rain = document.querySelector(".rain");
-    rain.innerHTML = `Rain: ${Math.round((forecastDay.rain) * 10)} %`
+    rain.innerHTML = `Rain: ${Math.round((forecastDay.rain) * 10)}%`
     if (forecastDay.rain === undefined) {
-      rain.innerHTML = `Rain: 0 %`
+      rain.innerHTML = `Rain: 0%`
     }
   }
 })
@@ -84,9 +84,7 @@ function showWeather(response) {
   currentSky.innerHTML = response.data.weather[0].description;
   let currentIcon = document.querySelector(".icon");
   currentIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-
+  
   getForecast(response.data.coord)
 }
 // вызов данных о погоде
@@ -106,29 +104,5 @@ function getCity(event) {
 let celsiusTemp = null;
 let searchCity = document.querySelector("#enter-city");
 searchCity.addEventListener("submit", getCity);
-
-// вызов фарингейт и обратно в цельсий
-function showFahrenheit(event) {
-  event.preventDefault()
-  let currentTemp = document.querySelector(".temperatureNow");
-  let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
-  currentTemp.innerHTML = fahrenheitTemp;
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-
-let fahrenheit = document.querySelector(".fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheit)
-
-function showCelsius(event) {
-  event.preventDefault()
-  let currentTemp = document.querySelector(".temperatureNow");
-  currentTemp.innerHTML = Math.round(celsiusTemp);
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-}
-
-let celsius = document.querySelector(".celsius");
-celsius.addEventListener("click", showCelsius)
 
 showCity("Kharkiv");
