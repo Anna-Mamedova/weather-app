@@ -68,7 +68,6 @@ function getForecast(coordinates) {
 
 // точные данные о погоде
 function showWeather(response) {
-  console.log(response);
   let searchCity = document.querySelector(".yourCity");
   searchCity.innerHTML = response.data.name;
   let currentTemp = document.querySelector(".temperatureNow");
