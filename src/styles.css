@@ -40,6 +40,7 @@ body {
   }
   
   .units {
+    color: black;
     position: relative;
     top: -45px;
   }
@@ -49,7 +50,7 @@ body {
   }
   
   .container {
-    max-width: 75%;
+    max-width: 1100px;
   }
   
   .weatherWindow {
@@ -60,12 +61,11 @@ body {
   }
 
   .weatherNow {
-    padding: 20px 0 20px 0;
+    margin: 20px 0 30px 0;
   }
   
   .temperatureNow {
     font-size: 80px;
-    margin-bottom: 0px;
   }
 
   .yourCity {
@@ -78,7 +78,6 @@ body {
   .dayTime,
   .typeSky {
     font-size: 15px;
-    padding: 0px;
   }
   
   .dayIndicators {
